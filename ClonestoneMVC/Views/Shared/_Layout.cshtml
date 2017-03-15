@@ -45,6 +45,7 @@
                                    
                     <li>@Html.ActionLink("News", "Index", "News")</li>
                     <li>@Html.ActionLink("Tutorial", "Index", "Tutorial")</li>
+                    <li>@Html.ActionLink("Ranking", "Index", "Ranking")</li>
 
                     <!-- Abfrage userrole ob ADMIN! -->
                     @if (Convert.ToString(Session["sessionUserrole"]) == "2")
@@ -58,10 +59,10 @@
                         <li>@Html.ActionLink("Insert News/Tutorial", "Index", "Editor")</li>
                     }
 
-                    <!--Abfrage userrole ob EDITOR!-->
+                    <!--Abfrage userrole ob USER!-->
                     @if (Convert.ToString(Session["sessionUserrole"]) == "1")
                     {
-                        <li>@Html.ActionLink("Ranking", "Index", "Ranking")</li>
+                        //<li>@Html.ActionLink("Ranking", "Index", "Ranking")</li>
                     }
 
                     <!--Anzeige Gamertag und Link auf Profile-->
