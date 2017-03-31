@@ -3,3 +3,8 @@ C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Log\bin\
 C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
 C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
 C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.csprojResolveAssemblyReference.cache
+C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.Log\bin\Debug\CardGame.Log.dll
+C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.Log\bin\Debug\CardGame.Log.pdb
+C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.Log\obj\Debug\CardGame.Log.csprojResolveAssemblyReference.cache
+C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.Log\obj\Debug\CardGame.Log.dll
+C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.Log\obj\Debug\CardGame.Log.pdb

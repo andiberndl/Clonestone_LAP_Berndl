@@ -30,6 +30,7 @@ namespace CardGame.Web.Controllers
                 //card.Type = c.tbltype.typename;
                 //card.Type = CardManager.GetCardTypeById(c.fktype);
                 card.Type = CardManager.CardTypes[c.fktype];
+               
 
                 CardList.Add(card);
             }
@@ -50,6 +51,7 @@ namespace CardGame.Web.Controllers
             card.Attack = dbcard.attack;
             card.Life = dbcard.life;
             card.Type = CardManager.CardTypes[dbcard.fktype];
+            card.pic = dbcard.pic;
 
             return View(card);
         }
