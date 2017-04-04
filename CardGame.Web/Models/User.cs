@@ -20,5 +20,7 @@ namespace CardGame.Web.Models
         public string Salt { get; set; }
 
         public string Role { get; set; }
+
+        public string Gamertag { get; set; }
     }
 }

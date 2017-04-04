@@ -34,7 +34,7 @@ namespace CardGame.Web.Controllers
                                 DateTime.Now,                   //Zeitpunkt der Erstellung
                                 DateTime.Now.AddMinutes(20),    //Gültigkeitsdauer
                                 true,                           //Persistentes Ticket über Sessions hinweg
-                                login.Role            //Userrolle(n)
+                                login.Role                      //Userrolle(n)
                                 );
 
                 string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
@@ -72,6 +72,7 @@ namespace CardGame.Web.Controllers
             dbUser.salt = regUser.Salt;
             dbUser.userrole = "player";
             dbUser.currencybalance = 100;
+            dbUser.gamertag = regUser.Gamertag;
 
             //dbUser.tblrole = new List<tblrole>();
             //dbUser.tblrole.Add(new tblrole());

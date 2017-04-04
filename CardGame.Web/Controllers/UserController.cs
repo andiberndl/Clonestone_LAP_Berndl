@@ -32,6 +32,7 @@ namespace CardGame.Web.Controllers
                 user.Role = c.userrole;
                 user.Password = c.password;
                 user.Salt = c.salt;
+                user.Gamertag = c.gamertag;
 
 
                 UserList.Add(user);
