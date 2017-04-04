@@ -61,6 +61,7 @@
           <ScalarProperty Name="packprice" ColumnName="packprice" />
           <ScalarProperty Name="cardquantity" ColumnName="cardquantity" />
           <ScalarProperty Name="picturename" ColumnName="picturename" />
+          <ScalarProperty Name="gold" ColumnName="gold" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

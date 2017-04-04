@@ -61,9 +61,10 @@
     </Key>
     <Property Name="idpack" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="packname" Type="varchar" MaxLength="50" />
-    <Property Name="packprice" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="cardquantity" Type="int" />
+    <Property Name="packprice" Type="int" Nullable="false" />
+    <Property Name="cardquantity" Type="int" Nullable="false" />
     <Property Name="picturename" Type="varchar" MaxLength="50" />
+    <Property Name="gold" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tblperson">
     <Key>

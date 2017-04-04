@@ -70,7 +70,7 @@ namespace CardGame.Web.Controllers
             dbUser.email = regUser.Email;
             dbUser.password = regUser.Password;
             dbUser.salt = regUser.Salt;
-            dbUser.userrole = "player";
+            dbUser.userrole = "user";
             dbUser.currencybalance = 100;
             dbUser.gamertag = regUser.Gamertag;
 
