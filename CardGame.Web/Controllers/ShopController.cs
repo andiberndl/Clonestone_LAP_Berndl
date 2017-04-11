@@ -40,7 +40,10 @@ namespace CardGame.Web.Controllers
 
             if (currencyDiff >= 0)
             {
-                
+                int userID = UserManager.GetUserByEmail(User.Identity.Name).idperson;
+                var packID = pack.PackID;
+
+                ShopManager.OrderExec(userID, packID);
             }
 
 

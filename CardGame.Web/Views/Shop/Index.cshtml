@@ -9,15 +9,20 @@
 @{
     for (int i = 0; i < 6; i++)
     {
-        <div class="col-md-4">
-            @Model.ToList()[i].Packname <br />
-            @Model.ToList()[i].Packprice<br />
-            @Model.ToList()[i].Cardquantity<br />
+        using (Html.BeginForm())
+        {
+            <div class="col-md-4">
+                @Model.ToList()[i].Packname <br />
+                @Model.ToList()[i].Packprice<br />
+                @Model.ToList()[i].Cardquantity<br />
 
-            <input type="hidden" name="IdPack" value="@Model.ToList()[i].PackID" />
-            <input type="hidden" name="Packprice" value="@Model.ToList()[i].Packprice" />
-            <input type="submit" value="Buy"  />
+                <input type="hidden" name="packId" value="@Model.ToList()[i].PackID" />
+                <input type="hidden" name="Packprice" value="@Model.ToList()[i].Packprice" />
+                <input type="submit" value="Buy" />
 
-        </div>
+            </div>
+        }
+
+
     }
 }
