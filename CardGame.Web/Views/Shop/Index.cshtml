@@ -6,6 +6,13 @@
 }
 
 <h2>Shop</h2>
-
-<img src="~/Content/img/rupeeee.gif" style="height:50px" />
-
+@{
+    for (int i = 0; i < 3; i++)
+    {
+        <div class="col-md-4">
+            @Model.ToList()[i].Packname <br />
+            @Model.ToList()[i].Packprice<br />
+            @Model.ToList()[i].Cardquantity
+        </div>
+    }
+}

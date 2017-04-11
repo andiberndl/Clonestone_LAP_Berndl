@@ -48,3 +48,16 @@ C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\de
 C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\obj\Debug\CardGame.DAL.csprojResolveAssemblyReference.cache
 C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\obj\Debug\CardGame.DAL.dll
 C:\Users\AndiVM\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\obj\Debug\CardGame.DAL.pdb
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\CardGame.DAL.dll.config
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\CardGame.DAL.dll
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\CardGame.DAL.pdb
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\CardGame.Log.dll
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\EntityFramework.dll
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\CardGame.Log.pdb
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\EntityFramework.xml
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\bin\Debug\de\EntityFramework.resources.dll
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\obj\Debug\CardGame.DAL.csprojResolveAssemblyReference.cache
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\obj\Debug\CardGame.DAL.dll
+C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\obj\Debug\CardGame.DAL.pdb
