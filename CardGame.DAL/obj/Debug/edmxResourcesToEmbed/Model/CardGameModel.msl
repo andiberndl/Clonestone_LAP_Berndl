@@ -61,7 +61,7 @@
           <ScalarProperty Name="packprice" ColumnName="packprice" />
           <ScalarProperty Name="cardquantity" ColumnName="cardquantity" />
           <ScalarProperty Name="picturename" ColumnName="picturename" />
-          <ScalarProperty Name="gold" ColumnName="gold" />
+          <ScalarProperty Name="goldquantity" ColumnName="goldquantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -86,6 +86,20 @@
         <MappingFragment StoreEntitySet="tbltype">
           <ScalarProperty Name="idtype" ColumnName="idtype" />
           <ScalarProperty Name="typename" ColumnName="typename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vCollectionCards">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.vCollectionCards">
+        <MappingFragment StoreEntitySet="vCollectionCards">
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="idcard" ColumnName="idcard" />
+          <ScalarProperty Name="fkperson" ColumnName="fkperson" />
+          <ScalarProperty Name="cardname" ColumnName="cardname" />
+          <ScalarProperty Name="mana" ColumnName="mana" />
+          <ScalarProperty Name="attack" ColumnName="attack" />
+          <ScalarProperty Name="life" ColumnName="life" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

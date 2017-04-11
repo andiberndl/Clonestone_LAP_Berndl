@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a626599dc94d4279ad7c74c6509ac134" Name="Diagram1">
+      <Diagram DiagramId="36b4044e9ea44b9fa7f4e55c0f345ca5" Name="Diagram1">
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tblcard" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tblclass" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tblcollection" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tblpack" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tblperson" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tbltype" Width="1.5" PointX="1.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="itin21_ClonestoneFSModel.vCollectionCards" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
         <AssociationConnector Association="itin21_ClonestoneFSModel.FK__tblcard__fkclass__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="itin21_ClonestoneFSModel.FK__tblcard__fktype__2C3393D0" ManuallyRouted="false" />
         <AssociationConnector Association="itin21_ClonestoneFSModel.FK__tblcollec__fkcar__2B0A656D" ManuallyRouted="false" />

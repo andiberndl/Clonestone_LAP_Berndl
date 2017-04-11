@@ -66,10 +66,10 @@
           </Key>
           <Property Name="idpack" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="packname" Type="varchar" MaxLength="50" />
-          <Property Name="packprice" Type="int" Nullable="false" />
+          <Property Name="packprice" Type="decimal" Precision="18" Scale="0" />
           <Property Name="cardquantity" Type="int" Nullable="false" />
           <Property Name="picturename" Type="varchar" MaxLength="50" />
-          <Property Name="gold" Type="int" Nullable="false" />
+          <Property Name="goldquantity" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tblperson">
           <Key>
@@ -79,7 +79,7 @@
           <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="gamertag" Type="varchar" MaxLength="50" />
-          <Property Name="currencybalance" Type="int" />
+          <Property Name="currencybalance" Type="int" Nullable="false" />
           <Property Name="isactive" Type="bit" />
           <Property Name="email" Type="varchar" MaxLength="150" />
           <Property Name="password" Type="char" MaxLength="128" />
@@ -92,6 +92,26 @@
           </Key>
           <Property Name="idtype" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="typename" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vCollectionCards">
+          <Key>
+            <PropertyRef Name="idcard" />
+            <PropertyRef Name="fkperson" />
+            <PropertyRef Name="cardname" />
+            <PropertyRef Name="mana" />
+            <PropertyRef Name="attack" />
+            <PropertyRef Name="life" />
+          </Key>
+          <Property Name="number" Type="int" />
+          <Property Name="idcard" Type="int" Nullable="false" />
+          <Property Name="fkperson" Type="int" Nullable="false" />
+          <Property Name="cardname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mana" Type="tinyint" Nullable="false" />
+          <Property Name="attack" Type="smallint" Nullable="false" />
+          <Property Name="life" Type="smallint" Nullable="false" />
+          <Property Name="pic" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK__deckcolle__fkcol__2EDAF651">
           <End Role="tblcollection" Type="Self.tblcollection" Multiplicity="1" />
@@ -223,6 +243,18 @@
           <EntitySet Name="tblpack" EntityType="Self.tblpack" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblperson" EntityType="Self.tblperson" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbltype" EntityType="Self.tbltype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vCollectionCards" EntityType="Self.vCollectionCards" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vCollectionCards].[number] AS [number], 
+    [vCollectionCards].[idcard] AS [idcard], 
+    [vCollectionCards].[fkperson] AS [fkperson], 
+    [vCollectionCards].[cardname] AS [cardname], 
+    [vCollectionCards].[mana] AS [mana], 
+    [vCollectionCards].[attack] AS [attack], 
+    [vCollectionCards].[life] AS [life], 
+    [vCollectionCards].[pic] AS [pic]
+    FROM [dbo].[vCollectionCards] AS [vCollectionCards]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__deckcolle__fkcol__2EDAF651" Association="Self.FK__deckcolle__fkcol__2EDAF651">
             <End Role="tblcollection" EntitySet="tblcollection" />
             <End Role="tbldeckcollection" EntitySet="tbldeckcollection" />
@@ -335,10 +367,10 @@
           </Key>
           <Property Name="idpack" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="packname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="packprice" Type="Int32" Nullable="false" />
+          <Property Name="packprice" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="cardquantity" Type="Int32" Nullable="false" />
           <Property Name="picturename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="gold" Type="Int32" Nullable="false" />
+          <Property Name="goldquantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblorder" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="tblpack" ToRole="tblorder" />
         </EntityType>
         <EntityType Name="tblperson">
@@ -349,7 +381,7 @@
           <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="gamertag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="currencybalance" Type="Int32" />
+          <Property Name="currencybalance" Type="Int32" Nullable="false" />
           <Property Name="isactive" Type="Boolean" />
           <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
@@ -366,6 +398,24 @@
           <Property Name="idtype" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="typename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblcard" Relationship="Self.FK__tblcard__fktype__2C3393D0" FromRole="tbltype" ToRole="tblcard" />
+        </EntityType>
+        <EntityType Name="vCollectionCards">
+          <Key>
+            <PropertyRef Name="idcard" />
+            <PropertyRef Name="fkperson" />
+            <PropertyRef Name="cardname" />
+            <PropertyRef Name="mana" />
+            <PropertyRef Name="attack" />
+            <PropertyRef Name="life" />
+          </Key>
+          <Property Name="number" Type="Int32" />
+          <Property Name="idcard" Type="Int32" Nullable="false" />
+          <Property Name="fkperson" Type="Int32" Nullable="false" />
+          <Property Name="cardname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mana" Type="Byte" Nullable="false" />
+          <Property Name="attack" Type="Int16" Nullable="false" />
+          <Property Name="life" Type="Int16" Nullable="false" />
+          <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK__tblcard__fkclass__2D27B809">
           <End Role="tblclass" Type="Self.tblclass" Multiplicity="0..1" />
@@ -476,6 +526,7 @@
           <EntitySet Name="tblpack" EntityType="Self.tblpack" />
           <EntitySet Name="tblperson" EntityType="Self.tblperson" />
           <EntitySet Name="tbltype" EntityType="Self.tbltype" />
+          <EntitySet Name="vCollectionCards" EntityType="Self.vCollectionCards" />
           <AssociationSet Name="FK__tblcard__fkclass__2D27B809" Association="Self.FK__tblcard__fkclass__2D27B809">
             <End Role="tblclass" EntitySet="tblclass" />
             <End Role="tblcard" EntitySet="tblcard" />
@@ -579,7 +630,7 @@
                 <ScalarProperty Name="packprice" ColumnName="packprice" />
                 <ScalarProperty Name="cardquantity" ColumnName="cardquantity" />
                 <ScalarProperty Name="picturename" ColumnName="picturename" />
-                <ScalarProperty Name="gold" ColumnName="gold" />
+                <ScalarProperty Name="goldquantity" ColumnName="goldquantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -604,6 +655,20 @@
               <MappingFragment StoreEntitySet="tbltype">
                 <ScalarProperty Name="idtype" ColumnName="idtype" />
                 <ScalarProperty Name="typename" ColumnName="typename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vCollectionCards">
+            <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.vCollectionCards">
+              <MappingFragment StoreEntitySet="vCollectionCards">
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="idcard" ColumnName="idcard" />
+                <ScalarProperty Name="fkperson" ColumnName="fkperson" />
+                <ScalarProperty Name="cardname" ColumnName="cardname" />
+                <ScalarProperty Name="mana" ColumnName="mana" />
+                <ScalarProperty Name="attack" ColumnName="attack" />
+                <ScalarProperty Name="life" ColumnName="life" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

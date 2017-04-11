@@ -96,19 +96,10 @@
     <Compile Include="Model\tbltype.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\vCollectionCards.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model\CardGameModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CardGameModel.edmx</DependentUpon>
-      <LastGenOutput>CardGameModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\CardGameModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CardGameModel.edmx</DependentUpon>
-      <LastGenOutput>CardGameModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -129,6 +120,18 @@
       <Project>{a2b8ef85-9ca4-48fc-850a-c9fa254a7a4b}</Project>
       <Name>CardGame.Log</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\CardGameModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
+      <LastGenOutput>CardGameModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\CardGameModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
+      <LastGenOutput>CardGameModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

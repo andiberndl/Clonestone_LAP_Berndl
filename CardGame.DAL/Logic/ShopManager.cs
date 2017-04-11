@@ -19,6 +19,11 @@ namespace CardGame.DAL.Logic
             return returnList;
         }
 
+        public static void OrderExec()
+        {
+
+        }
+
 
     }
 }
