@@ -89,20 +89,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="vCollectionCards">
-      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.vCollectionCards">
-        <MappingFragment StoreEntitySet="vCollectionCards">
-          <ScalarProperty Name="number" ColumnName="number" />
-          <ScalarProperty Name="idcard" ColumnName="idcard" />
-          <ScalarProperty Name="fkperson" ColumnName="fkperson" />
-          <ScalarProperty Name="cardname" ColumnName="cardname" />
-          <ScalarProperty Name="mana" ColumnName="mana" />
-          <ScalarProperty Name="attack" ColumnName="attack" />
-          <ScalarProperty Name="life" ColumnName="life" />
-          <ScalarProperty Name="pic" ColumnName="pic" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <AssociationSetMapping Name="tbldeckcollection" TypeName="itin21_ClonestoneFSModel.tbldeckcollection" StoreEntitySet="tbldeckcollection">
       <EndProperty Name="tblcollection">
         <ScalarProperty Name="idcollectioncard" ColumnName="fkcollectioncard" />
@@ -111,5 +97,20 @@
         <ScalarProperty Name="iddeck" ColumnName="fkdeck" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="vCollectionCards">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.vCollectionCards">
+        <MappingFragment StoreEntitySet="vCollectionCards">
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="idcollectioncard" ColumnName="idcollectioncard" />
+          <ScalarProperty Name="fkorder" ColumnName="fkorder" />
+          <ScalarProperty Name="life" ColumnName="life" />
+          <ScalarProperty Name="attack" ColumnName="attack" />
+          <ScalarProperty Name="mana" ColumnName="mana" />
+          <ScalarProperty Name="cardname" ColumnName="cardname" />
+          <ScalarProperty Name="fkperson" ColumnName="fkperson" />
+          <ScalarProperty Name="idcard" ColumnName="idcard" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

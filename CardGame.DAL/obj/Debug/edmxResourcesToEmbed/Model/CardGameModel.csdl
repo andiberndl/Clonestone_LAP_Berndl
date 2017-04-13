@@ -98,24 +98,6 @@
     <Property Name="typename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="tblcard" Relationship="Self.FK__tblcard__fktype__2C3393D0" FromRole="tbltype" ToRole="tblcard" />
   </EntityType>
-  <EntityType Name="vCollectionCards">
-    <Key>
-      <PropertyRef Name="idcard" />
-      <PropertyRef Name="fkperson" />
-      <PropertyRef Name="cardname" />
-      <PropertyRef Name="mana" />
-      <PropertyRef Name="attack" />
-      <PropertyRef Name="life" />
-    </Key>
-    <Property Name="number" Type="Int32" />
-    <Property Name="idcard" Type="Int32" Nullable="false" />
-    <Property Name="fkperson" Type="Int32" Nullable="false" />
-    <Property Name="cardname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="mana" Type="Byte" Nullable="false" />
-    <Property Name="attack" Type="Int16" Nullable="false" />
-    <Property Name="life" Type="Int16" Nullable="false" />
-    <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <Association Name="FK__tblcard__fkclass__2D27B809">
     <End Role="tblclass" Type="Self.tblclass" Multiplicity="0..1" />
     <End Role="tblcard" Type="Self.tblcard" Multiplicity="*" />
@@ -225,7 +207,6 @@
     <EntitySet Name="tblpack" EntityType="Self.tblpack" />
     <EntitySet Name="tblperson" EntityType="Self.tblperson" />
     <EntitySet Name="tbltype" EntityType="Self.tbltype" />
-    <EntitySet Name="vCollectionCards" EntityType="Self.vCollectionCards" />
     <AssociationSet Name="FK__tblcard__fkclass__2D27B809" Association="Self.FK__tblcard__fkclass__2D27B809">
       <End Role="tblclass" EntitySet="tblclass" />
       <End Role="tblcard" EntitySet="tblcard" />
@@ -262,5 +243,27 @@
       <End Role="tblcollection" EntitySet="tblcollection" />
       <End Role="tbldeck" EntitySet="tbldeck" />
     </AssociationSet>
+    <EntitySet Name="vCollectionCards" EntityType="itin21_ClonestoneFSModel.vCollectionCards" />
   </EntityContainer>
+  <EntityType Name="vCollectionCards">
+    <Key>
+      <PropertyRef Name="idcard" />
+      <PropertyRef Name="fkperson" />
+      <PropertyRef Name="cardname" />
+      <PropertyRef Name="mana" />
+      <PropertyRef Name="attack" />
+      <PropertyRef Name="life" />
+      <PropertyRef Name="fkorder" />
+      <PropertyRef Name="idcollectioncard" />
+    </Key>
+    <Property Name="idcard" Type="Int32" Nullable="false" />
+    <Property Name="fkperson" Type="Int32" Nullable="false" />
+    <Property Name="cardname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mana" Type="Byte" Nullable="false" />
+    <Property Name="attack" Type="Int16" Nullable="false" />
+    <Property Name="life" Type="Int16" Nullable="false" />
+    <Property Name="fkorder" Type="Int32" Nullable="false" />
+    <Property Name="idcollectioncard" Type="Int32" Nullable="false" />
+    <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
 </Schema>

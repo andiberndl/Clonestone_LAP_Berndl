@@ -1,4 +1,4 @@
-﻿using System;
+﻿     using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +15,8 @@ namespace CardGame.Web.Models
         public int Attack { get; set; }
         public int Mana { get; set; }
         public int Life { get; set; }
+        public byte[] Pic { get; set; }
+        public int Number { get; set; }
 
 
     }

@@ -13,7 +13,6 @@
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tblpack" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tblperson" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="itin21_ClonestoneFSModel.tbltype" Width="1.5" PointX="1.5" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="itin21_ClonestoneFSModel.vCollectionCards" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
         <AssociationConnector Association="itin21_ClonestoneFSModel.FK__tblcard__fkclass__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="itin21_ClonestoneFSModel.FK__tblcard__fktype__2C3393D0" ManuallyRouted="false" />
         <AssociationConnector Association="itin21_ClonestoneFSModel.FK__tblcollec__fkcar__2B0A656D" ManuallyRouted="false" />
@@ -23,6 +22,7 @@
         <AssociationConnector Association="itin21_ClonestoneFSModel.FK__tblorder__fkpack__0B91BA14" ManuallyRouted="false" />
         <AssociationConnector Association="itin21_ClonestoneFSModel.FK__tblorder__fkpers__0A9D95DB" ManuallyRouted="false" />
         <AssociationConnector Association="itin21_ClonestoneFSModel.tbldeckcollection" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="itin21_ClonestoneFSModel.vCollectionCards" Width="1.5" PointX="7.375" PointY="6.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

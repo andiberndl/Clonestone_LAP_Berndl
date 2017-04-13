@@ -37,6 +37,7 @@
                         <li>@Html.ActionLink("Cards", "Overview", "Card")</li>
                         <li>@Html.ActionLink("Users", "Index", "User")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                        <li>@Html.ActionLink("Collection","Index","Deckbuilder")</li>
                         <li><img src="~/Content/img/rupeeee.gif" style="height:20px; margin-top:14px "/></li>
                         <li>@Html.ActionLink(@CardGame.DAL.Logic.UserManager.GetUserByEmail(User.Identity.Name).currencybalance.ToString(),"Index","Shop") </li>
                     }

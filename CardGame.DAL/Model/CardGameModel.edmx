@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="itin21_ClonestoneFSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="itin21_ClonestoneFSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblcard">
           <Key>
             <PropertyRef Name="idcard" />
@@ -93,8 +93,8 @@
           <Property Name="idtype" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="typename" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Während der Generierung sind Fehler aufgetreten:
+Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vCollectionCards' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
         <EntityType Name="vCollectionCards">
           <Key>
             <PropertyRef Name="idcard" />
@@ -103,14 +103,17 @@ warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not
             <PropertyRef Name="mana" />
             <PropertyRef Name="attack" />
             <PropertyRef Name="life" />
+            <PropertyRef Name="fkorder" />
+            <PropertyRef Name="idcollectioncard" />
           </Key>
-          <Property Name="number" Type="int" />
           <Property Name="idcard" Type="int" Nullable="false" />
           <Property Name="fkperson" Type="int" Nullable="false" />
           <Property Name="cardname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="mana" Type="tinyint" Nullable="false" />
           <Property Name="attack" Type="smallint" Nullable="false" />
           <Property Name="life" Type="smallint" Nullable="false" />
+          <Property Name="fkorder" Type="int" Nullable="false" />
+          <Property Name="idcollectioncard" Type="int" Nullable="false" />
           <Property Name="pic" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK__deckcolle__fkcol__2EDAF651">
@@ -245,13 +248,14 @@ warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not
           <EntitySet Name="tbltype" EntityType="Self.tbltype" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vCollectionCards" EntityType="Self.vCollectionCards" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vCollectionCards].[number] AS [number], 
     [vCollectionCards].[idcard] AS [idcard], 
     [vCollectionCards].[fkperson] AS [fkperson], 
     [vCollectionCards].[cardname] AS [cardname], 
     [vCollectionCards].[mana] AS [mana], 
     [vCollectionCards].[attack] AS [attack], 
     [vCollectionCards].[life] AS [life], 
+    [vCollectionCards].[fkorder] AS [fkorder], 
+    [vCollectionCards].[idcollectioncard] AS [idcollectioncard], 
     [vCollectionCards].[pic] AS [pic]
     FROM [dbo].[vCollectionCards] AS [vCollectionCards]</DefiningQuery>
           </EntitySet>
@@ -296,8 +300,7 @@ warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not
             <End Role="tblorder" EntitySet="tblorder" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="itin21_ClonestoneFSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -398,24 +401,6 @@ warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not
           <Property Name="idtype" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="typename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblcard" Relationship="Self.FK__tblcard__fktype__2C3393D0" FromRole="tbltype" ToRole="tblcard" />
-        </EntityType>
-        <EntityType Name="vCollectionCards">
-          <Key>
-            <PropertyRef Name="idcard" />
-            <PropertyRef Name="fkperson" />
-            <PropertyRef Name="cardname" />
-            <PropertyRef Name="mana" />
-            <PropertyRef Name="attack" />
-            <PropertyRef Name="life" />
-          </Key>
-          <Property Name="number" Type="Int32" />
-          <Property Name="idcard" Type="Int32" Nullable="false" />
-          <Property Name="fkperson" Type="Int32" Nullable="false" />
-          <Property Name="cardname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="mana" Type="Byte" Nullable="false" />
-          <Property Name="attack" Type="Int16" Nullable="false" />
-          <Property Name="life" Type="Int16" Nullable="false" />
-          <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK__tblcard__fkclass__2D27B809">
           <End Role="tblclass" Type="Self.tblclass" Multiplicity="0..1" />
@@ -526,7 +511,6 @@ warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not
           <EntitySet Name="tblpack" EntityType="Self.tblpack" />
           <EntitySet Name="tblperson" EntityType="Self.tblperson" />
           <EntitySet Name="tbltype" EntityType="Self.tbltype" />
-          <EntitySet Name="vCollectionCards" EntityType="Self.vCollectionCards" />
           <AssociationSet Name="FK__tblcard__fkclass__2D27B809" Association="Self.FK__tblcard__fkclass__2D27B809">
             <End Role="tblclass" EntitySet="tblclass" />
             <End Role="tblcard" EntitySet="tblcard" />
@@ -563,7 +547,29 @@ warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not
             <End Role="tblcollection" EntitySet="tblcollection" />
             <End Role="tbldeck" EntitySet="tbldeck" />
           </AssociationSet>
+          <EntitySet Name="vCollectionCards" EntityType="itin21_ClonestoneFSModel.vCollectionCards" />
         </EntityContainer>
+        <EntityType Name="vCollectionCards">
+          <Key>
+            <PropertyRef Name="idcard" />
+            <PropertyRef Name="fkperson" />
+            <PropertyRef Name="cardname" />
+            <PropertyRef Name="mana" />
+            <PropertyRef Name="attack" />
+            <PropertyRef Name="life" />
+            <PropertyRef Name="fkorder" />
+            <PropertyRef Name="idcollectioncard" />
+          </Key>
+          <Property Name="idcard" Type="Int32" Nullable="false" />
+          <Property Name="fkperson" Type="Int32" Nullable="false" />
+          <Property Name="cardname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mana" Type="Byte" Nullable="false" />
+          <Property Name="attack" Type="Int16" Nullable="false" />
+          <Property Name="life" Type="Int16" Nullable="false" />
+          <Property Name="fkorder" Type="Int32" Nullable="false" />
+          <Property Name="idcollectioncard" Type="Int32" Nullable="false" />
+          <Property Name="pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -658,20 +664,6 @@ warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vCollectionCards">
-            <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.vCollectionCards">
-              <MappingFragment StoreEntitySet="vCollectionCards">
-                <ScalarProperty Name="number" ColumnName="number" />
-                <ScalarProperty Name="idcard" ColumnName="idcard" />
-                <ScalarProperty Name="fkperson" ColumnName="fkperson" />
-                <ScalarProperty Name="cardname" ColumnName="cardname" />
-                <ScalarProperty Name="mana" ColumnName="mana" />
-                <ScalarProperty Name="attack" ColumnName="attack" />
-                <ScalarProperty Name="life" ColumnName="life" />
-                <ScalarProperty Name="pic" ColumnName="pic" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="tbldeckcollection" TypeName="itin21_ClonestoneFSModel.tbldeckcollection" StoreEntitySet="tbldeckcollection">
             <EndProperty Name="tblcollection">
               <ScalarProperty Name="idcollectioncard" ColumnName="fkcollectioncard" />
@@ -680,6 +672,21 @@ warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vCollectionCards' does not
               <ScalarProperty Name="iddeck" ColumnName="fkdeck" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="vCollectionCards">
+            <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.vCollectionCards">
+              <MappingFragment StoreEntitySet="vCollectionCards">
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="idcollectioncard" ColumnName="idcollectioncard" />
+                <ScalarProperty Name="fkorder" ColumnName="fkorder" />
+                <ScalarProperty Name="life" ColumnName="life" />
+                <ScalarProperty Name="attack" ColumnName="attack" />
+                <ScalarProperty Name="mana" ColumnName="mana" />
+                <ScalarProperty Name="cardname" ColumnName="cardname" />
+                <ScalarProperty Name="fkperson" ColumnName="fkperson" />
+                <ScalarProperty Name="idcard" ColumnName="idcard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

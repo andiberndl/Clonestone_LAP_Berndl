@@ -1,0 +1,21 @@
+﻿@model IEnumerable<CardGame.Web.Models.CollectionCard>
+
+@{
+    ViewBag.Title = "Deckbuilder";
+}
+
+<h2>Deckbuilder</h2>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4">
+
+        @{ 
+            var base64 = Convert.ToBase64String(item.Pic);
+            var imgSrc = String.Format("data:image/png;base64,(0)", base64);
+        }
+
+        <img class="img-responsive" src="@imgSrc" />
+
+    </div>
+}
