@@ -44,12 +44,11 @@ namespace CardGame.Web.Controllers
                 var packID = pack.PackID;
 
                 ShopManager.OrderExec(userID, packID);
+                
             }
 
+            return RedirectToAction("Index");
 
-
-
-            return View();
         }
     }
 }

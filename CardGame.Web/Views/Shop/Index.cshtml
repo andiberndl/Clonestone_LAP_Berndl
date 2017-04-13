@@ -14,7 +14,20 @@
             <div class="col-md-4">
                 @Model.ToList()[i].Packname <br />
                 @Model.ToList()[i].Packprice<br />
-                @Model.ToList()[i].Cardquantity<br />
+
+                @{
+                    if (Model.ToList()[i].Cardquantity != 0)
+                    {
+                        @Model.ToList()[i].Cardquantity<br />
+                    }
+                    else
+                    {
+                        @Model.ToList()[i].Gold<br />  
+                    }
+
+
+                }
+               
 
                 <input type="hidden" name="packId" value="@Model.ToList()[i].PackID" />
                 <input type="hidden" name="Packprice" value="@Model.ToList()[i].Packprice" />
