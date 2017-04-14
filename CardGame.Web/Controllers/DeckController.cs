@@ -10,18 +10,21 @@ using CardGame.Log;
 
 namespace CardGame.Web.Controllers
 {
-    public class DeckbuilderController : Controller
+    public class DeckController : Controller
     {
         // GET: Deckbuilder
-        public ActionResult Index(int UserId)
+        public ActionResult Index()
         {
             List<CollectionCard> CardList = new List<CollectionCard>();
 
-            var dbCardList = DeckManager.GetCollectionCards(UserId);
+            var dbCardList = DeckManager.GetCollectionCards(UserManager.GetUserByEmail(User.Identity.Name).idperson);
 
             foreach (var cl in dbCardList)
             {
                 CollectionCard card = new CollectionCard();
+                card.FkOrder = cl.fkorder;
+                
+                card.IdCard = cl.idcard;
                 card.Pic = cl.pic;
 
                 CardList.Add(card);
