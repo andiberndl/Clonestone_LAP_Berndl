@@ -1,0 +1,16 @@
+<Xcpt>
+  <Time>18.04.2017 13:21:04</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetUserByEmail(String email) in C:\Users\bernandr\Documents\GitHub\Clonestone_LAP_Berndl\CardGame.DAL\Logic\UserManager.cs:Zeile 36.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>18.04.2017 13:21:35</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 13:21:35</Time>
+  <Info>HashPass = E23F8E80EEC9C6DFED863C6E79C14B7CBD0A945034144236052C4D81D5913FC13EA6636FD45E52124052C1749C39AA0B135AD49212F0B4192C6AC65F9ED7D3FF</Info>
+</Info>
